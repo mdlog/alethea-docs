@@ -1,8 +1,14 @@
-# 🏛️ Welcome to Alethea Network
+# Welcome to Alethea Network
 
-> **Divine Truth for Modern Markets**
+```
+    ◉─────◉
+     ╲   ╱      ALETHEA NETWORK
+      ◉─◉       Divine Truth for Modern Markets
+```
 
-Alethea Network is a decentralized oracle platform built on Linera blockchain that brings cryptographic truth verification to prediction markets and DeFi applications.
+> **Decentralized Oracle Platform on Linera Blockchain**
+
+Alethea Network brings cryptographic truth verification to prediction markets and DeFi applications through commit-reveal voting and reputation-based consensus.
 
 ## 📚 What You'll Find Here
 

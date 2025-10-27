@@ -1,10 +1,18 @@
 # Introduction
 
+```
+    ◉─────◉
+     ╲   ╱
+      ◉─◉
+```
+
 ## What is Alethea Network?
 
 **Alethea Network** is a decentralized oracle platform built on Linera blockchain that provides cryptographically secure truth verification for prediction markets and decentralized applications.
 
 Named after the Greek goddess of truth (Ἀλήθεια), daughter of Zeus, Alethea embodies the principles of honesty, transparency, and immutable truth in the Web3 world.
+
+> The logo represents our **decentralized network of voters** working together to establish truth through consensus.
 
 ## The Problem
 

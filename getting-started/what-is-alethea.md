@@ -1,5 +1,11 @@
 # What is Alethea?
 
+```
+    ◉─────◉
+     ╲   ╱
+      ◉─◉
+```
+
 ## The Name
 
 **Alethea** (Ἀλήθεια) comes from ancient Greek mythology, representing the goddess and personification of truth, sincerity, and honesty. She was the daughter of Zeus, the king of the gods.

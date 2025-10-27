@@ -1,5 +1,11 @@
 # Key Concepts
 
+```
+    ◉─────◉
+     ╲   ╱      Decentralized Network
+      ◉─◉       of Truth Validators
+```
+
 Before diving into Alethea Network, it's important to understand the core concepts that make our decentralized oracle platform work.
 
 ## 🏗️ Architecture Overview
