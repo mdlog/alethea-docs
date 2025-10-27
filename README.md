@@ -6,14 +6,11 @@ Alethea Network is a decentralized oracle platform built on Linera blockchain th
 
 ## 📚 What You'll Find Here
 
-This documentation covers everything you need to know about Alethea Network:
+This documentation covers the fundamentals of Alethea Network:
 
-* **Getting Started** - Quick setup and first steps
-* **Core Concepts** - Understanding how Alethea works
-* **Developer Guide** - Building with Alethea
-* **API Reference** - Complete GraphQL API documentation
-* **Integration Guide** - Connect your DApp to Alethea
-* **Deployment** - Running your own oracle node
+* **Introduction** - What is Alethea and why it matters
+* **Core Technology** - Greek goddess of truth meets blockchain
+* **Key Concepts** - Architecture, voting, reputation, and economics
 
 ## 🎯 Quick Links
 
@@ -21,12 +18,12 @@ This documentation covers everything you need to know about Alethea Network:
 [introduction.md](getting-started/introduction.md)
 {% endcontent-ref %}
 
-{% content-ref url="core-concepts/architecture.md" %}
-[architecture.md](core-concepts/architecture.md)
+{% content-ref url="getting-started/what-is-alethea.md" %}
+[what-is-alethea.md](getting-started/what-is-alethea.md)
 {% endcontent-ref %}
 
-{% content-ref url="developer-guide/quickstart.md" %}
-[quickstart.md](developer-guide/quickstart.md)
+{% content-ref url="getting-started/key-concepts.md" %}
+[key-concepts.md](getting-started/key-concepts.md)
 {% endcontent-ref %}
 
 ## 🌟 Key Features
