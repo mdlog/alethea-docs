@@ -192,43 +192,60 @@ Streak Bonus → +2 points per consecutive correct vote
 
 Alethea's three contracts communicate via **Linera's native cross-chain messaging**:
 
-### Message Flow
+### Message Flow Diagram
 
-**1. Market → Oracle (Resolution Request)**
 ```
-Market needs resolution
-  ↓
-Send ResolutionRequest message
-  ↓
-Oracle Coordinator receives
+┌────────────────────────────────────────┐
+│   Prediction Market App                │
+│   Chain ID: e476187f...                │
+│   (Sports Betting, Politics, etc)      │
+└──────────────┬─────────────────────────┘
+               │
+               │ 1. Store Alethea's Chain ID
+               │    alethea_chain = 3a4b5c6d...
+               │
+               │ 2. Send Message
+               │    runtime.send_message(
+               │        target: 3a4b5c6d...,  ← Alethea's Chain ID
+               │        message: CreateMarket {...}
+               │    )
+               ↓
+┌────────────────────────────────────────┐
+│   Alethea Oracle Coordinator           │
+│   Chain ID: 3a4b5c6d...                │
+│                                        │
+│   • Receives market creation request   │
+│   • Coordinates voting process         │
+│   • Aggregates votes from voters       │
+└──────────────┬─────────────────────────┘
+               │
+               │ 3. Process voting with Voter Chain
+               │    (Voters commit, reveal, aggregate)
+               │
+               │ 4. Calculate consensus
+               │    (Weighted majority, dispute handling)
+               │
+               │ 5. Send Resolution back
+               │    runtime.send_message(
+               │        target: e476187f...,  ← Prediction Market Chain ID
+               │        message: MarketResolved {...}
+               │    )
+               ↓
+┌────────────────────────────────────────┐
+│   Prediction Market App                │
+│   Chain ID: e476187f...                │
+│   execute_message() receives resolution│
+│                                        │
+│   • Update market status               │
+│   • Distribute payouts                 │
+│   • Close market                       │
+└────────────────────────────────────────┘
 ```
 
-**2. Oracle → Voter (Voting Request)**
-```
-Oracle needs votes
-  ↓
-Send VotingRequest message
-  ↓
-Voter Chain receives
-```
-
-**3. Voter → Oracle (Vote Submission)**
-```
-Voter submits vote
-  ↓
-Send DirectVote/CommitVote message
-  ↓
-Oracle Coordinator receives
-```
-
-**4. Oracle → Market (Resolution Result)**
-```
-Oracle calculates consensus
-  ↓
-Send ResolutionResult message
-  ↓
-Market receives final outcome
-```
+**Key Steps:**
+1. **Market Creation** - External app sends market request to Alethea
+2. **Oracle Processing** - Alethea coordinates voting and consensus
+3. **Resolution** - Final result sent back to requesting app
 
 ### Cross-Chain Benefits
 
