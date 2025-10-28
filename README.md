@@ -75,14 +75,17 @@ Named after the Greek goddess of truth (Ἀλήθεια), daughter of Zeus, Alet
 **Chain ID**: `8550ef0ecb1ee0289b94c88d5bdec0183e5c3667d473ab1cedcf19f56ad6bd16`
 
 **Applications**:
-* Market Chain: `528f7238...2f23` ✅
-* Voter Chain: `c712e383...6f6f` ✅ (min_stake: 1 token)
+* Market Chain: `dbdd3588...96b` ✅ INTEGRATED
+* Voter Chain: `333197de...bc40` ✅ (min_stake: 1, voting operational!)
+* Oracle Coordinator: `d6e3e0e8...209` ✅ INTEGRATED
 
 **Stats**:
 * Validators: 14 active
-* Block Height: 6+
-* Active Markets: 1 (BTC $100k)
-* Total Liquidity: 1M tokens
+* Block Height: 75
+* Block Hash: `2aac5f8613064c5b67b69f6a66128509ba9a4bd0e3fbd308fe2dbd5efac01880`
+* Markets: Deployment reset for integration testing
+* Integration: ✅ FULLY INTEGRATED (Market ↔ Oracle ↔ Voter)
+* Last Updated: Oct 28, 2025 12:19 UTC
 
 ## 🤝 Community
 

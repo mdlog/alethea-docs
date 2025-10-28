@@ -374,8 +374,10 @@ Understanding these concepts helps you:
 
 * **Network**: Linera Conway Testnet (Public)
 * **Chain ID**: `8550ef0ecb1ee0289b94c88d5bdec0183e5c3667d473ab1cedcf19f56ad6bd16`
-* **Market App**: `528f7238...2f23` ✅
-* **Voter App**: `c712e383...6f6f` ✅
+* **Market App**: `dbdd3588...96b` ✅ INTEGRATED
+* **Voter App**: `333197de...bc40` ✅ VOTING OPERATIONAL
+* **Oracle Coordinator**: `d6e3e0e8...209` ✅ INTEGRATED
+* **Block Height**: 75
 * **Min Stake**: 1 token
 * **Validators**: 14 active nodes
 

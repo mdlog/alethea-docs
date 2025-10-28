@@ -16,11 +16,14 @@
 
 * **Network**: Linera Conway Testnet (Public)
 * **Chain ID**: `8550ef0ecb1ee0289b94c88d5bdec0183e5c3667d473ab1cedcf19f56ad6bd16`
-* **Market App**: `528f72383882069f74f471184249e2c6ee834b8e52f60b840724c3cc59532f23`
-* **Voter App**: `c712e38315a62fb92225575600d81346735ac378fe784d82c57599a3b7f56f6f`
+* **Market App**: `dbdd35883b93d142d3ecd27d49aed23ca2d28e7607e35aa1858bf399bc40996b` ✅ INTEGRATED
+* **Voter App**: `333197de9bd7426b327b41f8f342537a6160d3de521917d71ca6ed1a14a7bc40` ✅ VOTING OPERATIONAL
+* **Oracle Coordinator**: `d6e3e0e891120936967ea0f877d135cf6839d7e8b312930f3c15b0a4e44f2209` ✅ INTEGRATED
 * **Min Stake**: 1 token (testnet friendly!)
-* **Block Height**: 6+
-* **Status**: ✅ Fully Operational
+* **Block Height**: 75
+* **Block Hash**: `2aac5f8613064c5b67b69f6a66128509ba9a4bd0e3fbd308fe2dbd5efac01880`
+* **Status**: ✅ FULLY INTEGRATED (Market ↔ Oracle ↔ Voter) 🎉
+* **Last Updated**: Oct 28, 2025 12:19 UTC
 
 **Access**:
 * 🖥️ Explorer: [http://localhost:3333](http://localhost:3333)

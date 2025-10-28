@@ -8,3 +8,4 @@
 * [What is Alethea?](getting-started/what-is-alethea.md)
 * [Key Concepts](getting-started/key-concepts.md)
 * [Deployment Guide](getting-started/deployment.md)
+* [🎉 Integration Complete!](getting-started/integration-complete.md)
