@@ -10,21 +10,32 @@ Before diving into Alethea Network, it's important to understand the core concep
 
 ## 🏗️ Architecture Overview
 
-Alethea Network is built on **two independent smart contracts** that work together:
+Alethea Network is built on **three smart contracts** that work together as a decentralized oracle infrastructure:
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                                                             │
-│  ┌──────────────────┐          ┌──────────────────┐       │
-│  │  MARKET CHAIN    │◄────────►│  VOTER CHAIN     │       │
-│  │                  │  Cross-  │                  │       │
-│  │  Trading Layer   │  Chain   │  Oracle Layer    │       │
-│  │                  │  Message │                  │       │
-│  └──────────────────┘          └──────────────────┘       │
-│                                                             │
-│            Built on Linera Mikrochains                     │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│                                                                 │
+│  ┌──────────────────┐      ┌──────────────────┐               │
+│  │  MARKET CHAIN    │      │  ORACLE          │               │
+│  │                  │      │  COORDINATOR     │               │
+│  │  • AMM Trading   │◄────►│                  │               │
+│  │  • Share Pricing │ Msg  │  • Aggregation   │               │
+│  │  • Positions     │      │  • Consensus     │               │
+│  └────────┬─────────┘      │  • Disputes      │               │
+│           │                └────────▲──────────┘               │
+│           │                         │                          │
+│           │                         │ Msg                      │
+│           │                ┌────────┴──────────┐               │
+│           │                │  VOTER CHAIN      │               │
+│           │                │                   │               │
+│           └───────────────►│  • Commit-Reveal  │               │
+│             Resolution     │  • Reputation     │               │
+│             Requests       │  • Stake Mgmt     │               │
+│                            └───────────────────┘               │
+│                                                                 │
+│            Built on Linera Mikrochains                         │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
 ```
 
 ## 🎯 Core Components
@@ -73,6 +84,29 @@ The **Voter Chain** provides decentralized oracle:
 **Voting Flow:**
 ```
 Register → Commit (secret) → Reveal (verify) → Consensus → Reward
+```
+
+### 3. Oracle Coordinator
+
+The **Oracle Coordinator** orchestrates the resolution process:
+
+**Purpose:**
+- Aggregate votes from multiple voters
+- Calculate weighted consensus
+- Manage dispute periods
+- Distribute rewards and penalties
+- Provide final market resolution
+
+**Key Features:**
+- ✅ Multi-voter aggregation
+- ✅ Weighted majority consensus
+- ✅ Dispute handling
+- ✅ Automatic reward distribution
+- ✅ Resolution broadcasting
+
+**Resolution Flow:**
+```
+Vote Aggregation → Consensus Calculation → Dispute Period → Final Resolution → Market Settlement
 ```
 
 ## 🔐 Commit-Reveal Voting
@@ -146,6 +180,56 @@ Streak Bonus → +2 points per consecutive correct vote
 | Trusted | 100-500 | 1.2x voting weight |
 | Expert | 500-1000 | 1.5x voting weight |
 | Oracle | 1000+ | 2x voting weight |
+
+## 🔗 Cross-Chain Communication
+
+Alethea's three contracts communicate via **Linera's native cross-chain messaging**:
+
+### Message Flow
+
+**1. Market → Oracle (Resolution Request)**
+```
+Market needs resolution
+  ↓
+Send ResolutionRequest message
+  ↓
+Oracle Coordinator receives
+```
+
+**2. Oracle → Voter (Voting Request)**
+```
+Oracle needs votes
+  ↓
+Send VotingRequest message
+  ↓
+Voter Chain receives
+```
+
+**3. Voter → Oracle (Vote Submission)**
+```
+Voter submits vote
+  ↓
+Send DirectVote/CommitVote message
+  ↓
+Oracle Coordinator receives
+```
+
+**4. Oracle → Market (Resolution Result)**
+```
+Oracle calculates consensus
+  ↓
+Send ResolutionResult message
+  ↓
+Market receives final outcome
+```
+
+### Cross-Chain Benefits
+
+- ✅ **Decoupled Architecture** - Each contract operates independently
+- ✅ **Scalability** - Parallel processing across chains
+- ✅ **Security** - Isolated failure domains
+- ✅ **Flexibility** - Easy to upgrade individual components
+- ✅ **Native Integration** - Built-in Linera cross-chain support
 
 ## 💰 Automated Market Maker (AMM)
 
