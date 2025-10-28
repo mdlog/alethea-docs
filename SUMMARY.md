@@ -7,3 +7,4 @@
 * [Introduction](getting-started/introduction.md)
 * [What is Alethea?](getting-started/what-is-alethea.md)
 * [Key Concepts](getting-started/key-concepts.md)
+* [Deployment Guide](getting-started/deployment.md)

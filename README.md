@@ -40,6 +40,15 @@ This documentation covers the fundamentals of Alethea Network:
 * **Cross-Chain Ready** - Native Linera cross-chain messaging
 * **GraphQL API** - Modern, developer-friendly interface
 
+## 🌐 Live on Conway Testnet!
+
+**Status**: ✅ **DEPLOYED & OPERATIONAL**
+
+* **Network**: Linera Conway Testnet (Public)
+* **Chain ID**: `8550ef0e...bd16`
+* **Validators**: 14 active
+* **Min Stake**: 1 token (testnet friendly!)
+
 ## 🚀 Quick Example
 
 ```graphql
@@ -48,14 +57,32 @@ mutation {
     question: "Will Bitcoin reach $100k by Dec 31, 2025?"
     outcomes: ["Yes", "No"]
     resolutionDeadline: 1735689600000000
-    initialLiquidity: 1000000
+    initialLiquidity: "1000000"
   )
 }
 ```
 
+**Try it live**: [GraphiQL IDE](http://localhost:8080)
+
 ## 💡 Why Alethea?
 
 Named after the Greek goddess of truth (Ἀλήθεια), daughter of Zeus, Alethea Network embodies the principles of honesty, transparency, and immutable truth in the blockchain world.
+
+## 📊 Current Deployment
+
+**Network**: 🌐 **Conway Testnet** (Public)  
+**Status**: ✅ LIVE & OPERATIONAL  
+**Chain ID**: `8550ef0ecb1ee0289b94c88d5bdec0183e5c3667d473ab1cedcf19f56ad6bd16`
+
+**Applications**:
+* Market Chain: `528f7238...2f23` ✅
+* Voter Chain: `c712e383...6f6f` ✅ (min_stake: 1 token)
+
+**Stats**:
+* Validators: 14 active
+* Block Height: 6+
+* Active Markets: 1 (BTC $100k)
+* Total Liquidity: 1M tokens
 
 ## 🤝 Community
 

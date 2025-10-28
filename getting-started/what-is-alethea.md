@@ -178,12 +178,26 @@ Result: Median price from consensus
 - Build reputation over time
 - Passive income opportunity
 
+## 🌐 Live Deployment
+
+**Status**: ✅ **DEPLOYED ON CONWAY TESTNET**
+
+Alethea Network is currently live on:
+* **Network**: Linera Conway Testnet (Public)
+* **Chain ID**: `8550ef0e...bd16`
+* **Validators**: 14 active nodes
+* **Min Stake**: 1 token (testnet friendly!)
+
+**Try it now**:
+* Explorer: [http://localhost:3333](http://localhost:3333)
+* GraphQL: [http://localhost:8080](http://localhost:8080)
+
 ## Getting Started
 
 Ready to dive in?
 
-{% content-ref url="installation.md" %}
-[installation.md](installation.md)
+{% content-ref url="../README.md" %}
+[README.md](../README.md)
 {% endcontent-ref %}
 
 ---

@@ -368,16 +368,27 @@ Understanding these concepts helps you:
 3. **Build Integrations** - Use the right APIs
 4. **Trust the System** - See the security guarantees
 
+## 🌐 Current Deployment
+
+**Alethea Network is LIVE** on Conway Testnet:
+
+* **Network**: Linera Conway Testnet (Public)
+* **Chain ID**: `8550ef0ecb1ee0289b94c88d5bdec0183e5c3667d473ab1cedcf19f56ad6bd16`
+* **Market App**: `528f7238...2f23` ✅
+* **Voter App**: `c712e383...6f6f` ✅
+* **Min Stake**: 1 token
+* **Validators**: 14 active nodes
+
+**Quick Access**:
+* Explorer: [http://localhost:3333](http://localhost:3333)
+* GraphQL: [http://localhost:8080](http://localhost:8080)
+
 ## Next Steps
 
 Now that you understand the key concepts:
 
-{% content-ref url="installation.md" %}
-[installation.md](installation.md)
-{% endcontent-ref %}
-
-{% content-ref url="../core-concepts/architecture.md" %}
-[architecture.md](../core-concepts/architecture.md)
+{% content-ref url="../README.md" %}
+[README.md](../README.md)
 {% endcontent-ref %}
 
 ---
