@@ -69,23 +69,32 @@ Dynamic pricing for prediction markets:
 
 ## Architecture Overview
 
-Alethea Network consists of two main smart contracts:
+Alethea Network consists of three smart contracts working together as a decentralized oracle:
 
 ```
-┌─────────────────────────────────────────────────┐
-│                                                 │
-│  ┌──────────────────┐   ┌──────────────────┐  │
-│  │  MARKET CHAIN    │   │  VOTER CHAIN     │  │
-│  │                  │   │                  │  │
-│  │  • AMM Trading   │◄─►│  • Commit Vote   │  │
-│  │  • Liquidity     │   │  • Reveal Vote   │  │
-│  │  • Positions     │   │  • Reputation    │  │
-│  │  • Payouts       │   │  • Consensus     │  │
-│  └──────────────────┘   └──────────────────┘  │
-│                                                 │
-│         Built on Linera Blockchain             │
-│                                                 │
-└─────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────┐
+│                                                      │
+│              ┌────────────────────────┐             │
+│              │ ORACLE COORDINATOR     │             │
+│              │                        │             │
+│              │ • Vote Aggregation     │             │
+│              │ • Consensus Calc       │             │
+│              │ • Resolution           │             │
+│              └───────────┬────────────┘             │
+│                          │                          │
+│                   ┌──────┴──────┐                   │
+│                   ↓             ↓                   │
+│         ┌──────────────┐  ┌──────────────┐         │
+│         │MARKET CHAIN  │  │VOTER CHAIN   │         │
+│         │              │  │              │         │
+│         │• AMM Trading │  │• Commit Vote │         │
+│         │• Liquidity   │  │• Reveal Vote │         │
+│         │• Positions   │  │• Reputation  │         │
+│         └──────────────┘  └──────────────┘         │
+│                                                      │
+│           Built on Linera Mikrochains               │
+│                                                      │
+└──────────────────────────────────────────────────────┘
 ```
 
 ### Market Chain
@@ -98,11 +107,19 @@ Handles all trading operations:
 
 ### Voter Chain
 
-Provides decentralized oracle:
+Provides decentralized oracle voting:
 - Voter registration with stake requirement
 - Commit-reveal voting mechanism
 - Reputation system management
-- Consensus determination
+- Secure vote submission
+
+### Oracle Coordinator
+
+Orchestrates the resolution process:
+- Aggregates votes from multiple voters
+- Calculates weighted consensus
+- Manages dispute periods
+- Broadcasts final resolution to Market Chain
 
 ## Quick Stats
 
